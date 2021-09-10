@@ -1,0 +1,43 @@
+a, a:hover, a:focus {
+    text-decoration: none !important;
+}
+
+#showPwd{
+    color: #6c757d;
+    position: absolute;
+    right: 4px;
+    top: 0;
+    i{
+        position: initial !important;
+    }
+}
+
+hr {
+    width: -webkit-fill-available;
+    color: #C7C7C7;
+    background: #C7C7C7;
+}
+
+.form-group {
+    i {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: rgb(131, 131, 131);
+    }
+    .form-control {
+        padding-left: 33px !important;
+        &:focus {
+            border: 1px solid orange !important;
+            border-color: none !important;
+            box-shadow:none !important
+        }
+    }
+}
+
+

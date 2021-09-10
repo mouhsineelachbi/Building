@@ -1,0 +1,35 @@
+@import "../../../../../../assets/sass/_variables.sass"
+ul
+    justify-content: center
+    display: flex
+    flex-wrap: wrap
+.nav-item
+    max-width: 110px
+    margin: 3px 30px
+    padding: 4px 0px
+    color: $blue
+    font-weight: 600
+    background: $white
+    border-radius: 8px
+    
+    @media screen and (max-width: 990px) 
+        font-size: 15px
+        width: auto
+        margin: 3px 20px
+
+    @media screen and (max-width: 770px) 
+        font-size: 14px
+        width: auto
+        margin: 3px 10px
+
+
+    @media screen and (max-width: 600px) 
+        font-size: 13px
+        width: auto
+        margin: 3px 5px
+
+.active
+    box-shadow: $orange 0px 3px 6px -1px !important   
+    background: $white !important
+    color: $blue !important
+    

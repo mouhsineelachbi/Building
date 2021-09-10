@@ -1,0 +1,165 @@
+<div style="overflow: hidden;">
+    <div class="container">
+        <nav class="d-flex justify-content-end my-3">
+            <app-lang></app-lang>
+        </nav>
+        <div class="row mt-4">
+            <div class="col-md-6 text-center align-self-center">
+                <img src="assets/img/logo.png" width="100%" class="logoZoomSlidedown" alt="logo">
+            </div>
+            <div class="animate__animated animate__bounceInRight col-md-6 position-sticky">
+                <h2 class="signuptitle">Commencer</h2>
+                <span class="text-muted">J'ai déja un compte ? <a class="linkColor" routerLink="/sign-in">{{signInUp}}</a></span>
+                <div class="text-center text-muted my-2">
+                    Inscrivez-vous via
+                </div>
+                <app-social-media></app-social-media>
+    
+                <div class="d-flex justify-content-between my-3">
+                    <hr>
+                    <span class="mx-1 text-muted">Ou</span>
+                    <hr>
+                </div>
+    
+                <!-- start form sign up  -->
+                <form [formGroup]= "signUpForm" (ngSubmit)="onSignUp()" novalidate>
+                    <div class="form-group form-floating ">
+                        <i class="fas fa-envelope"></i>
+                        <input 
+                            type="email" 
+                            class="form-control" 
+                            formControlName="email"
+                            placeholder=" "
+                            [ngClass]="{ 'is-invalid': email.invalid && email.touched, 'is-valid': email.valid && email.touched }"                    
+                        >
+                        <label 
+                            [ngClass]="{ 'text-danger': email.invalid && email.touched, 'text-success': email.valid  }"
+                            for="email" 
+                            class="form_label"
+                        >Adresse email</label>
+    
+                        <!-- <small *ngIf="email.touched && email.invalid" class="text-danger pl-2">
+                            <span *ngIf="email.errors?.required" >Adresse e-mail est obligatoire!</span>
+                            <span *ngIf="email.errors?.pattern" >Adresse e-mail non valide!</span>
+                        </small> -->
+                    </div>
+                    <div class="form-group form-floating">
+                        <i class="fas fa-phone-alt"></i>
+                        <input 
+                            type="tel" 
+                            class="form-control" 
+                            formControlName="phone"
+                            style="padding-left: 70px !important;"
+                            ng2TelInput 
+                            [ng2TelInputOptions]="{initialCountry: 'ma'}" 
+                            [ngClass]="{ 'is-invalid': phone.invalid && phone.touched, 'is-valid': phone.valid && phone.touched }"                    
+    
+                        >
+                        <!-- <label 
+                            for="phone" 
+                            class="form_label"
+                            style="left: 70px;"
+                            [ngClass]="{ 'text-danger': phone.invalid && phone.touched, 'text-success': phone.valid  }"
+                        >Numéro de téléphone</label> -->
+    
+                        <!-- <small *ngIf="phone.invalid && phone.touched" class="text-danger pl-2">
+                            <span *ngIf="phone.errors?.required" >Numéro de téléphone est obligatoire!</span>
+                            <span *ngIf="phone.errors?.pattern" >Numéro de téléphone non valide!</span>
+                            <span *ngIf="phone.errors?.minlength" >Numéro de téléphone doit comporter au moins 9 caractères.!</span>
+                        </small> -->
+                    </div>
+                    <div class="form-group form-floating position-relative">
+                        <i class="fa fa-lock"></i>
+                        <input 
+                            [type]="passwordTextType ? 'text' : 'password'"
+                            class="form-control" 
+                            formControlName="password" 
+                            placeholder=" "
+                            [(ngModel)]="account.password" 
+                            minlength="8" maxlength="50"
+                            [ngClass]="{ 'is-invalid': password.invalid && password.touched, 'is-valid': password.valid && password.touched }"                    
+    
+                        >
+                        <label 
+                            for="password" 
+                            class="form_label"
+                            [ngClass]="{ 'text-danger': password.invalid && password.touched, 'text-success': password.valid  }"
+    
+                        >Mot de passe</label>
+    
+                        <small>
+                            <ng9-password-strength-bar
+                                class="passwordStrength"
+                                [passwordToCheck]="account.password"
+                                [customThresholds]="thresholds"
+                                [barColors]="myColors">
+                                
+                            </ng9-password-strength-bar>
+                        </small>
+    
+                        <!-- <small *ngIf="password.invalid && password.touched" class="text-danger pl-2">
+                            <span *ngIf="password.errors?.required" >Entrez votre mot de passe!</span>
+                            <span *ngIf="password.errors?.minlength" >Le mot de passe doit comporter au moins 8 caractères.!</span>
+                        </small> -->
+                        <div (click)="toggleTextType()" type="button" class="rightIcon" [ngClass]=" { 'me-3': password.invalid && password.touched || password.valid }">
+                            <i class="far fa-eye-slash"
+                                [ngClass]="{
+                                    'fa-eye-slash': !passwordTextType,
+                                    'fa-eye': passwordTextType
+                                }"
+                                >
+                            </i>
+                        </div>
+                    </div>
+    
+    
+                    <div class="form-group form-floating">
+                        <i class="fa fa-lock"></i>
+                        <input 
+                            type="password" 
+                            class="form-control" 
+                            formControlName="confirmPassword" 
+                            placeholder=" "
+                            [ngClass]="{ 'is-invalid': confirmPassword.invalid && confirmPassword.touched, 'is-valid': confirmPassword.valid && confirmPassword.touched }"                    
+    
+                        >
+                        <label 
+                            for="confirmPassword" 
+                            class="form_label"
+                            [ngClass]="{ 'text-danger': confirmPassword.invalid && confirmPassword.touched, 'text-success': confirmPassword.valid  }"
+    
+                        >Retapez mot de passe</label>
+                        <!-- <small *ngIf="confirmPassword.invalid && confirmPassword.touched" class="text-danger pl-2">
+                            <span *ngIf="confirmPassword.errors?.required" >Retapez votre mot de passe!</span>
+                            <span *ngIf="confirmPassword.errors.matching" >Le mot de passe ne correspondent pas!</span>
+                        </small> -->
+                    </div>
+    
+                    <div class="form-group form-floating">
+                        <i class="fas fa-sync-alt"></i>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="codeCaptcha" 
+                            placeholder=" "
+                        >
+                        <label for="codeCaptcha" class="form_label">Code captcha</label>
+                    </div>
+    
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="checkBox">
+                        <label class="form-check-label text-secondary" for="checkBox">
+                            <small>
+                                J'accepte les <a routerLink="/conditions" class="linkColor">conditions d'utilisation </a> et la <a routerLink="/confidentialite" class="linkColor"> politique de confidentialité</a> de la plateforme
+                            </small>  
+                        </label>
+                        <small class="text-danger"></small>
+                    </div>
+                    <div class="d-flex justify-content-center my-4">
+                        <button [disabled]="!signUpForm.valid" type="submit" class="btn btn-warning">S'inscrire</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>    
+</div>

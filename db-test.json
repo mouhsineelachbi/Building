@@ -1,0 +1,140 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "test@test.com",
+      "phone": "0342312232",
+      "password": "test0909"
+    },
+    {
+      "email": "Leon53@hotmail.com",
+      "phone": "405-279-7026",
+      "password": "MUBqbIQcP2uzmdI",
+      "id": 2
+    },
+    {
+      "email": "fakeboty@mailinator.com",
+      "phone": "090990909",
+      "password": "Pa$$w0rd!",
+      "id": 3
+    },
+    {
+      "email": "hedyxa@mailinator.com",
+      "phone": "9898988898",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 4
+    },
+    {
+      "email": "dojelogu@mailinator.com",
+      "phone": "98988898989",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 5
+    },
+    {
+      "email": "vanot@mailinator.com",
+      "phone": "8787878787",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 6
+    },
+    {
+      "email": "raquvo@mailinator.com",
+      "phone": "98989898",
+      "password": "okokokok",
+      "confirmPassword": "okokokok",
+      "id": 7
+    },
+    {
+      "email": "zesipepuwu@mailinator.com",
+      "phone": "98988998",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 8
+    },
+    {
+      "email": "zesipepuwu@mailinator.com",
+      "phone": "98988998",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 9
+    },
+    {
+      "email": "qujotu@mailinator.com",
+      "phone": "9898988988",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 10
+    },
+    {
+      "email": "bigym@mailinator.com",
+      "phone": "090909090",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 11
+    },
+    {
+      "email": "bigym@mailinator.com",
+      "phone": "090909090",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 12
+    },
+    {
+      "email": "torep@mailinator.com",
+      "phone": null,
+      "password": null,
+      "confirmPassword": null,
+      "id": 13
+    },
+    {
+      "email": "torep@mailinator.com",
+      "phone": "+1 (399) 898-9038",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": null,
+      "id": 14
+    },
+    {
+      "email": "torep@mailinator.com",
+      "phone": "+1 (399) 898-9038",
+      "password": null,
+      "confirmPassword": null,
+      "id": 15
+    },
+    {
+      "email": "torep@mailinator.com",
+      "phone": "+1 (399) 898-9038",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 16
+    },
+    {
+      "email": "torep@mailinator.com",
+      "phone": "+1 (399) 898-9038",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 17
+    },
+    {
+      "email": "zunahycomu@mailinator.com",
+      "phone": "9898989889",
+      "password": "Pa$$w0rd!",
+      "id": 18
+    },
+    {
+      "email": "gevi@mailinator.com",
+      "phone": "8787877787",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 19
+    },
+    {
+      "email": "hugavegys@mailinator.com",
+      "phone": "9898889898",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 20
+    }
+  ]
+}

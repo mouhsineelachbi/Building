@@ -1,0 +1,55 @@
+@import "../_variables.sass"
+    
+// form 
+.form-group 
+    position: relative
+    margin: 18px 0
+
+    i 
+        position: absolute
+        z-index: 1
+        display: block
+        width: 2.375rem
+        height: 2.375rem
+        top: 0.7rem
+        text-align: center
+        pointer-events: none
+        color: $gray2
+        font-size: 18px
+    
+    .form_label 
+        color: #6c757d
+        position: absolute
+        left: 2rem
+        top: 0.3rem
+        cursor: text
+        padding: 2px
+    
+    .form-control 
+        padding-left: 33px !important
+        padding-right: 33px
+        
+        &:focus 
+            border: 1px solid $orange 
+            box-shadow: $boxShadaw 
+    
+.rightIcon
+    color: $gray2
+    position: absolute
+    right: 5px
+    top: 11px
+    i
+        position: initial !important
+            
+.form-floating>.form-control, .form-floating>.form-select
+    height: $form-floating-input-height
+    padding-top: 10px !important
+    
+.form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label, .form-floating>.form-select~label
+    transform : $form-floating-label-transform
+    transition: $form-floating-transition
+    background: $form-floating-background
+    border: none
+    opacity: 1
+    color: $blue
+    height: 20px
