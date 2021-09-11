@@ -9,6 +9,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: making build folder
+        run: |
+          mkdir -p dist/Hshop
 
       - name: Cache node modules
         uses: actions/cache@v1
@@ -17,7 +20,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-            
+
       - name: Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
