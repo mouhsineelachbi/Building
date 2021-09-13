@@ -1,5 +1,8 @@
 name: Build HShop
-on: push
+on: 
+  push:
+    tags:
+    - '*'
 jobs:
   build:
     name: Build and Test
@@ -20,3 +23,9 @@ jobs:
         with:
           name: production-files
           path: ./dist
+
+      - name: Push Build to Releases
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "./dist/*"
+          token: ${{ secrets.TOKEN }}      
