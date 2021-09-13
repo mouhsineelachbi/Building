@@ -18,11 +18,17 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build:ci
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v1
+      # - name: Upload production-ready build files
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: production-files
+      #     path: ./dist
+      - name: Archive Release
+        uses: thedoctor0/zip-release@develop
         with:
-          name: production-files
-          path: ./dist
+          type: 'zip'
+          filename: 'release.zip'
+          exclusions: '*.git* /*node_modules/* .editorconfig'
 
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
