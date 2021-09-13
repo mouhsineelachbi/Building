@@ -24,7 +24,7 @@ jobs:
       #     name: production-files
       #     path: ./dist
       - name: Archive Release
-        uses: thedoctor0/zip-release@develop
+        uses: TheDoctor0/zip-release@0.6.0
         with:
           type: 'zip'
           filename: 'release.zip'
