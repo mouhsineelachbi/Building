@@ -9,9 +9,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: making build folder
-        run: |
-          mkdir -p dist/Hshop
 
       - name: Cache node modules
         uses: actions/cache@v1
@@ -25,13 +22,22 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install and npm run build
-        run: |
-          npm i
-          npm run build
 
-      - name: Push Build to Releases
-        uses: ncipollo/release-action@v1
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build:ci
+
+      - name: Archive build
+        if: success()
+        uses: actions/upload-artifact@v1
         with:
-          artifacts: "dist/Hshop/*"
-          token: ${{ secrets.TOKEN }}
+          name: deploy_dist
+          path: dist
+
+      # - name: Push Build to Releases
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     artifacts: "dist/Hshop/*"
+      #     token: ${{ secrets.TOKEN }}
