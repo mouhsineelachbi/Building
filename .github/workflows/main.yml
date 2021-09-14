@@ -18,16 +18,13 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build:ci
-      # - name: Upload production-ready build files
-      #   uses: actions/upload-artifact@v1
-      #   with:
-      #     name: production-files
-      #     path: ./dist
+        
       - name: Archive Release
         uses: TheDoctor0/zip-release@0.6.0
         with:
           type: 'zip'
           filename: 'release.zip'
+          directory: "./dist/"
           exclusions: '*.git* /*node_modules/* .editorconfig'
 
       - name: Push Build to Releases
